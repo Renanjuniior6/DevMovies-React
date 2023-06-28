@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-z-index: 99;
+min-height: 100px;
+z-index: 999;
 position: fixed;
 top: 0;
 display: flex;
 padding: 5px 50px;
 justify-content: space-between;
 align-items: center;
+background: ${props => props.changeBackground ? '#000' : 'transparent'};
+transition: background-color 0.6s ease-in-out;
 
 img {
    
