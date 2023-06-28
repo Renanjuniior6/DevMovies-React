@@ -6,6 +6,7 @@ import { getMovieVideos } from "../../services/getData"
 function Modal ({movieId, setshowModal}) {
 
     const [movie, setMovie] = useState()
+        console.log(movie)
 
     useEffect(() => {
       
@@ -26,7 +27,7 @@ function Modal ({movieId, setshowModal}) {
             <button onClick={() => setshowModal(false)} >X</button>
         <iframe 
 
-        src={`https://www.youtube.com/embed/${movie.key}`}
+        src={`https://www.youtube.com/embed/${movie[1].key}`}
         title="Youtube Video Plyer"
         height="500px"
         width="100%"> 

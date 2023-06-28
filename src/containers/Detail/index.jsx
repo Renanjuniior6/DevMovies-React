@@ -3,6 +3,10 @@ import { Background, Container, Cover, Info } from "./styles"
 import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos } from "../../services/getData"
 import { useParams } from 'react-router-dom'
 import { getImages } from "../../utils/getImages"
+import SpanGenres from "../../components/SpanGenre"
+import Credits from "../../components/Credits"
+import Slider from '../../components/Slider'
+import { ContainerSimilar } from "../../components/Credits/styles"
 
 
 function Detail() {
@@ -11,6 +15,8 @@ function Detail() {
     const [videos, setVideos] = useState()
     const [credits, setCredits] = useState()
     const [similar, setSimilar] = useState()
+
+    console.log(similar)
 
     useEffect(() => {
 
@@ -55,11 +61,32 @@ function Detail() {
                </Cover>
                <Info> 
                 <h2>{movie.title}</h2>
-                <div>Generos</div>
+                <SpanGenres genres={movie.genres}/>
                 <p>{movie.overview}</p>
-                <div>Creditos</div>
+                <div>
+                    <Credits credits={credits}/>
+                </div>
                </Info>
             </Container>
+
+            <ContainerSimilar>
+                {videos && videos.map( (video) => (
+                    <div key={video.id}>
+                        <h4>{video.name}</h4>
+                        <iframe 
+
+                        src={`https://www.youtube.com/embed/${video.key}`}
+                        title="Youtube Video Plyer"
+                        height="500px"
+                        width="100%"> 
+                            
+                        </iframe>
+                    </div>
+                ))
+
+                }
+            </ContainerSimilar>
+            { similar && <Slider info={similar} title={'Similar Movies'} /> }
 
           </> 
            )} 
