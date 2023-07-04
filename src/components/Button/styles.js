@@ -9,6 +9,7 @@ padding: 10px 20px;
 cursor: pointer;
 font-size: 20px;
 font-weight: 500;
+z-index: 9999;
 
 &:hover {
     color: #ff0000;

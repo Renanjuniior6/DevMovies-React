@@ -1,76 +1,89 @@
 import { useEffect, useState } from "react"
 import { Background, Container, Cover, Info } from "./styles"
-import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos } from "../../services/getData"
+import { getSerieById, getSerieVideos, getSeriesCredits, getSeriesSimilar } from "../../services/getData"
 import { useParams } from 'react-router-dom'
 import { getImages } from "../../utils/getImages"
 import SpanGenres from "../../components/SpanGenre"
 import Credits from "../../components/Credits"
-import Slider from '../../components/Slider'
+import Slider from '../../components/SliderMovies'
 import { ContainerSimilar } from "../../components/Credits/styles"
 
 
-function Detail() {
-    const { id } = useParams()
-    const [movie, setMovie] = useState()
-    const [videos, setVideos] = useState()
-    const [credits, setCredits] = useState()
-    const [similar, setSimilar] = useState()
+function DetailSeries() {
 
-    console.log(similar)
+
+    const { id } = useParams()
+
+
+    const [serie, setSerie] = useState()
+    const [serieVideos, setserieVideos] = useState()
+    const [serieCredits, setserieCredits] = useState()
+    const [serieSimilar, setserieSimilar] = useState()
+
+    //console.log(similar)
 
     useEffect(() => {
 
         async function getAllData() {
 
             Promise.all([
-                getMovieById(id),
-                getMovieVideos(id),
-                getMovieCredits(id),
-                getMovieSimilar(id),
 
 
-            ]).then(([movie, videos, credits, similar]) => {
+                getSerieById(id),
+                getSerieVideos(id),
+                getSeriesCredits(id),
+                getSeriesSimilar(id),
 
-                setMovie(movie)
-                setVideos(videos)
-                setCredits(credits)
-                setSimilar(similar)
+
+            ]).then(([ serie, serieVideos, serieCredits, seriesSimilar]) => {
+
+                
+
+                setSerie(serie)
+                setserieVideos(serieVideos)
+                setserieCredits(serieCredits)
+                setserieSimilar(seriesSimilar)
+
 
 
             })
 
                 .catch((error) => console.error(error))
 
+                
+               
         }
         getAllData()
 
+        
 
     }, [])
+
 
     return (
         <>
 
-          {movie && (
+          {serie && (
           <> 
 
-          <Background image={getImages(movie.backdrop_path)} /> 
+          <Background image={getImages(serie.backdrop_path)} /> 
 
             <Container>
                <Cover>
-                <img src={getImages(movie.poster_path)} /> 
+                <img src={getImages(serie.poster_path)} /> 
                </Cover>
                <Info> 
-                <h2>{movie.title}</h2>
-                <SpanGenres genres={movie.genres}/>
-                <p>{movie.overview}</p>
+                <h2>{serie.title}</h2>
+                <SpanGenres genres={serie.genres}/>
+                <p>{serie.overview}</p>
                 <div>
-                    <Credits credits={credits}/>
+                    <Credits credits={serieCredits}/>
                 </div>
                </Info>
             </Container>
 
             <ContainerSimilar>
-                {videos && videos.map( (video) => (
+                {serieVideos && serieVideos.map( (video) => (
                     <div key={video.id}>
                         <h4>{video.name}</h4>
                         <iframe 
@@ -86,7 +99,7 @@ function Detail() {
 
                 }
             </ContainerSimilar>
-            { similar && <Slider info={similar} title={'Similar Movies'} /> }
+            { serieSimilar && <Slider info={serieSimilar} title={'Similar Series'} /> }
 
           </> 
            )} 
@@ -95,4 +108,4 @@ function Detail() {
 
     )
 }
-export default Detail
+export default DetailSeries

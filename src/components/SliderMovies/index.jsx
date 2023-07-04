@@ -1,8 +1,8 @@
-import Cards from "../Cards"
+import CardsMovies from "../CardsMovies"
 import { Container } from "./styles"
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-function Slider ({info, title}) {
+function SliderMovies ({info, title}) {
 
     
     return (
@@ -17,7 +17,7 @@ function Slider ({info, title}) {
             {info.map((item, index) => (
                 <SwiperSlide key={index}>
 
-                    <Cards item={item} text={true} />
+                    <CardsMovies item={item} text={true} />
 
                 </SwiperSlide>
             ))}
@@ -29,4 +29,4 @@ function Slider ({info, title}) {
     </>
     )
 }
-export default Slider
+export default SliderMovies

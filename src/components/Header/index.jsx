@@ -8,10 +8,10 @@ function Header () {
     const {pathname} = useLocation()
 
     window.onscroll = () => {
-        if( !changeBackground && window.pageYOffset > 150) {
+        if( !changeBackground && window.pageYOffset > 120) {
             setchangeBackground(true)
         } 
-        if(changeBackground && window.pageYOffset <= 150) {
+        if(changeBackground && window.pageYOffset <= 120) {
             setchangeBackground(false)
         }
     }

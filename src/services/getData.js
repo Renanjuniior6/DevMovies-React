@@ -1,5 +1,11 @@
 import api from "./api";
 
+export async function getMoreMovies() {
+    const { data: {results} } = await api.get('/movie/popular')
+    
+    return results
+}
+
 export async function getMovies() {
     const { data: {results} } = await api.get('/movie/popular')
     
@@ -50,6 +56,30 @@ export async function getMovieSimilar (movieId) {
 
 export async function getMovieById (movieId) {
     const { data } = await api.get(`movie/${movieId}`)
+    
+       return data
+}
+
+export async function getSerieVideos (serieId) {
+    const { data: {results} } = await api.get(`tv/${serieId}/videos`)
+    
+       return results
+}
+
+export async function getSeriesCredits (serieId) {
+    const { data: {cast} } = await api.get(`tv/${serieId}/credits`)
+    
+       return cast
+}
+
+export async function getSeriesSimilar (serieId) {
+    const { data: {results} } = await api.get(`tv/${serieId}/similar`)
+    
+       return results
+}
+
+export async function getSerieById (serieId) {
+    const { data } = await api.get(`tv/${serieId}`)
     
        return data
 }

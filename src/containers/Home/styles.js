@@ -72,11 +72,52 @@ export const Container = styled.div`
 display: flex;
 justify-content: space-around;
 align-items: center;
-height: 100%;
+height: 30px;
 max-width: 1500px;
+
 `
 export const ContainerButtons = styled.div`
 display: flex;
 gap: 20px;
 margin-top: 30px;
 `
+
+export const ButtonSearch = styled.button`
+    padding: 15px 20px;
+    color: white;
+    border: 3px solid #ffffff;
+    font-size: 15px;
+    border-radius: 0px 20px 20px 0px;
+    cursor: pointer;
+    background-color: transparent; 
+
+    &:hover {
+        color: #ff0000;
+        background-color: #ffffff;
+    }
+    
+` 
+
+export const InputMovies = styled.input`
+    border: 3px solid #ffffff;
+    padding: 15px 20px;
+    width: 240px;
+    height: 57px;
+    border-radius: 20px 0px 0px 20px; 
+    outline: none;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: transparent; 
+`
+
+export const HelpBox = styled.div`
+z-index: 999;
+display: flex;
+justify-content: center;
+position: absolute;
+top: 25px;
+gap: 2px;
+
+`
+    

@@ -2,13 +2,13 @@ import { Container } from "./styles"
 import { getImages } from "../../utils/getImages"
 import { useNavigate } from 'react-router-dom'
 
-function Cards ({item, text}) {
+function CardsMovies ({item, text}) {
     const navigate = useNavigate()
 
     function getId(id) {
         console.log(id)
         
-        navigate(`/detalhe/${id}`)
+        navigate(`/detalhefilmes/${id}`)
     }
 
     return (
@@ -21,4 +21,4 @@ function Cards ({item, text}) {
     </Container>
     )
 }
-export default Cards
+export default CardsMovies
