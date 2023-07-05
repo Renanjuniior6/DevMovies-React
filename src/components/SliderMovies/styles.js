@@ -4,6 +4,12 @@ export const Container = styled.div`
 padding: 0 20px;
 overflow: hidden;
 
+@media screen and (max-width: 600px) {
+   img {
+    width: 210px;
+   } 
+}
+
 
 h2 {
     color: #ffffff;

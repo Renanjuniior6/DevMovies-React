@@ -38,6 +38,7 @@ gap: 50px;
     margin-left: auto;
     margin-right: auto;
     justify-content: space-between;
+    margin-top: 14px;
 }
 
 `

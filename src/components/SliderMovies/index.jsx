@@ -2,7 +2,7 @@ import CardsMovies from "../CardsMovies"
 import { Container } from "./styles"
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-function SliderMovies ({info, title}) {
+function SliderMovies ({info, title, isTrue}) {
 
     
     return (
@@ -17,7 +17,7 @@ function SliderMovies ({info, title}) {
             {info.map((item, index) => (
                 <SwiperSlide key={index}>
 
-                    <CardsMovies item={item} text={true} />
+                    <CardsMovies isShow={isTrue} item={item} text={true} />
 
                 </SwiperSlide>
             ))}

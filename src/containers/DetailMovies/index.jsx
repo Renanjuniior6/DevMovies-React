@@ -18,9 +18,6 @@ function DetailMovies() {
     const [credits, setCredits] = useState()
     const [similar, setSimilar] = useState()
 
-
-    //console.log(similar)
-
     useEffect(() => {
 
         async function getAllData() {
@@ -31,28 +28,17 @@ function DetailMovies() {
                 getMovieCredits(id),
                 getMovieSimilar(id),
 
-        
-
             ]).then(([movie, videos, credits, similar]) => {
 
                 setMovie(movie)
                 setVideos(videos)
                 setCredits(credits)
                 setSimilar(similar)
-
-
-
-
             })
 
                 .catch((error) => console.error(error))
-
-                
-               
         }
         getAllData()
-
-        
 
     }, [])
 
@@ -96,7 +82,7 @@ function DetailMovies() {
 
                 }
             </ContainerSimilar>
-            { similar && <SliderMovies info={similar} title={'Similar Movies'} /> }
+            { similar && <SliderMovies info={similar} title={'Similar Movies'} isTrue={true} /> }
 
           </> 
            )} 

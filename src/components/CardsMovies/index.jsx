@@ -2,14 +2,23 @@ import { Container } from "./styles"
 import { getImages } from "../../utils/getImages"
 import { useNavigate } from 'react-router-dom'
 
-function CardsMovies ({item, text}) {
+function CardsMovies ({item, text, isShow}) {
     const navigate = useNavigate()
 
-    function getId(id) {
-        
+   function getId(id) {
+   if(item) {
         navigate(`/detalhefilmes/${id}`)
-       // window.location.reload()
+   } 
+
+    if (isShow) {
+        navigate(`/detalhefilmes/${id}`)
+        window.location.reload()
     }
+
+    
+
+        
+    } 
 
     return (
 

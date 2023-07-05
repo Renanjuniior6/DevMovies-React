@@ -7,6 +7,11 @@ display: flex;
 margin-top: 30px;
 gap: 15px;
 
+@media screen and (max-width: 600px) {
+    width: 90%;
+    flex-wrap: wrap;
+}
+
 span {
     padding: 8px 18px;
     border: 2px solid #ffffff;

@@ -2,7 +2,7 @@ import CardsSeries from "../CardsSeries"
 import { Container } from "./styles"
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-function SliderSeries ({info, title}) {
+function SliderSeries ({info, title, isTrue}) {
 
     
     return (
@@ -17,7 +17,7 @@ function SliderSeries ({info, title}) {
             {info.map((item, index) => (
                 <SwiperSlide key={index}>
 
-                    <CardsSeries item={item} text={true} />
+                    <CardsSeries item={item} text={true} isShow={isTrue} />
 
                 </SwiperSlide>
             ))}

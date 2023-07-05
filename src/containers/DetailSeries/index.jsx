@@ -28,34 +28,23 @@ function DetailSeries() {
 
             Promise.all([
 
-
                 getSerieById(id),
                 getSerieVideos(id),
                 getSeriesCredits(id),
                 getSeriesSimilar(id),
 
-
             ]).then(([ serie, serieVideos, serieCredits, seriesSimilar]) => {
-
-                
 
                 setSerie(serie)
                 setserieVideos(serieVideos)
                 setserieCredits(serieCredits)
                 setserieSimilar(seriesSimilar)
 
-
-
             })
-
                 .catch((error) => console.error(error))
 
-                
-               
         }
         getAllData()
-
-        
 
     }, [])
 
@@ -99,7 +88,7 @@ function DetailSeries() {
 
                 }
             </ContainerSimilar>
-            { serieSimilar && <SliderSeries info={serieSimilar} title={'Similar Series'} /> }
+            { serieSimilar && <SliderSeries info={serieSimilar} title={'Similar Series'} isTrue={true} /> }
 
           </> 
            )} 
