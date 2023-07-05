@@ -8,7 +8,7 @@ function CardsMovies ({item, text}) {
     function getId(id) {
         
         navigate(`/detalhefilmes/${id}`)
-        window.location.reload()
+       // window.location.reload()
     }
 
     return (

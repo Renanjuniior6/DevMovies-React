@@ -8,7 +8,7 @@ function CardsSeries ({item, text}) {
     function getId(id) {
         
         navigate(`/detalheseries/${id}`)
-        window.location.reload()
+       // window.location.reload()
     }
 
     return (
