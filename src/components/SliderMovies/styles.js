@@ -4,6 +4,7 @@ export const Container = styled.div`
 padding: 0 20px;
 overflow: hidden;
 
+
 h2 {
     color: #ffffff;
     font-size: 28px;

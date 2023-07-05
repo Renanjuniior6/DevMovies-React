@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import { Background, Container, Cover, Info } from "./styles"
+import { Background, Container, Cover, Info, OverView } from "./styles"
 import { getSerieById, getSerieVideos, getSeriesCredits, getSeriesSimilar } from "../../services/getData"
 import { useParams } from 'react-router-dom'
 import { getImages } from "../../utils/getImages"
 import SpanGenres from "../../components/SpanGenre"
 import Credits from "../../components/Credits"
-import Slider from '../../components/SliderMovies'
+import SliderSeries from '../../components/SliderSeries'
 import { ContainerSimilar } from "../../components/Credits/styles"
 
 
@@ -75,7 +75,7 @@ function DetailSeries() {
                <Info> 
                 <h2>{serie.title}</h2>
                 <SpanGenres genres={serie.genres}/>
-                <p>{serie.overview}</p>
+                <OverView>{serie.overview}</OverView>
                 <div>
                     <Credits credits={serieCredits}/>
                 </div>
@@ -99,7 +99,7 @@ function DetailSeries() {
 
                 }
             </ContainerSimilar>
-            { serieSimilar && <Slider info={serieSimilar} title={'Similar Series'} /> }
+            { serieSimilar && <SliderSeries info={serieSimilar} title={'Similar Series'} /> }
 
           </> 
            )} 

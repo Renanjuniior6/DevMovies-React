@@ -6,6 +6,13 @@ display: flex;
 margin-top: 30px;
 gap: 10px;
 
+@media screen and (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
 div {
     display: flex;
     flex-direction: column;
@@ -13,6 +20,13 @@ div {
 
 p {
  color: #ffffff;
+ font-weight: 600;
+
+ @media screen and (max-width: 600px) {
+    width: 80px;
+    
+
+}
 }
 
 img {
@@ -42,6 +56,7 @@ div {
     height: 100%;
     margin: 20px 0;
 }
+
 
 h4 {
     color: #ffffff;

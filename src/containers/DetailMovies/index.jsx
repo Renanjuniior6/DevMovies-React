@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import { Background, Container, Cover, Info } from "./styles"
-import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos, getSerieById, getSerieVideos, getSeriesCredits, getSeriesSimilar } from "../../services/getData"
+import { Background, Container, Cover, Info, OverView } from "./styles"
+import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos} from "../../services/getData"
 import { useParams } from 'react-router-dom'
 import { getImages } from "../../utils/getImages"
 import SpanGenres from "../../components/SpanGenre"
 import Credits from "../../components/Credits"
-import Slider from '../../components/SliderMovies'
+import SliderMovies from '../../components/SliderMovies'
 import { ContainerSimilar } from "../../components/Credits/styles"
 
 
@@ -72,7 +72,7 @@ function DetailMovies() {
                <Info> 
                 <h2>{movie.title}</h2>
                 <SpanGenres genres={movie.genres}/>
-                <p>{movie.overview}</p>
+                <OverView>{movie.overview}</OverView>
                 <div>
                     <Credits credits={credits}/>
                 </div>
@@ -96,7 +96,7 @@ function DetailMovies() {
 
                 }
             </ContainerSimilar>
-            { similar && <Slider info={similar} title={'Similar Movies'} /> }
+            { similar && <SliderMovies info={similar} title={'Similar Movies'} /> }
 
           </> 
            )} 

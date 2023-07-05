@@ -129,7 +129,7 @@ useEffect(() => {
             {movie && (
                 
                 <Background img={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}>
-                    <HelpBox> 
+        <HelpBox> 
             <InputMovies ref={inputValue} placeholder='Buscar filmes e series..'/>
             <ButtonSearch red={false} onClick={Seek}>Buscar</ButtonSearch>
         </HelpBox>

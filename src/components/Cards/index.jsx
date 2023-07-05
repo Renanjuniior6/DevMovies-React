@@ -8,7 +8,7 @@ function Cards ({item, text}) {
     function getId(id) {
         console.log(id)
         
-        navigate(`/detalhe/${id}`)
+      //  navigate(`/detalhe/${id}`)
     }
 
     return (

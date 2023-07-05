@@ -12,9 +12,20 @@ align-items: center;
 background: ${props => props.changeBackground ? '#000' : 'transparent'};
 transition: background-color 0.6s ease-in-out;
 
+@media screen and (max-width: 600px) {
+    height: 50px;
+    width: 100%;
+    padding: 0px 0px;
+    min-height: 67px;
+}
+
 img {
    
     width: 25%;
+
+    @media screen and (max-width: 600px) {
+    display: none;
+}
 }
 `
 
@@ -22,6 +33,13 @@ export const Menu = styled.ul`
 display: flex;
 list-style: none;
 gap: 50px;
+
+@media screen and (max-width: 600px) {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+
 `
 
 export const Li = styled.li`
@@ -29,6 +47,12 @@ font-weight: 600;
 font-size: 28px;
 cursor: pointer;
 position: relative;
+
+@media screen and (max-width: 600px) {
+    font-size: 23px;
+    bottom: 15px;
+    margin-top: 10px;
+}
 
 a {
     text-decoration: none;

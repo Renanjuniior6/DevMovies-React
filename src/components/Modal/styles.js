@@ -12,9 +12,19 @@ position: fixed;
 padding: 50px;
 max-width: 1200px;
 
+@media screen and (max-width: 600px) {
+    width: 97%;
+    height: 600px;
+    padding: 17px;
+}
 
 iframe {
     border: none;
+
+    @media screen and (max-width: 600px) {
+    width: 97%;
+    height: 600px;
+}
 }
 `
 

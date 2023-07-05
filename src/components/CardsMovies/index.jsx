@@ -6,9 +6,9 @@ function CardsMovies ({item, text}) {
     const navigate = useNavigate()
 
     function getId(id) {
-        console.log(id)
         
         navigate(`/detalhefilmes/${id}`)
+        window.location.reload()
     }
 
     return (
