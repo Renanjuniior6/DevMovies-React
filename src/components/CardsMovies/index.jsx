@@ -12,7 +12,7 @@ function CardsMovies ({item, text, isShow}) {
 
     if (isShow) {
         navigate(`/detalhefilmes/${id}`)
-        window.location.reload()
+        location.reload()
     }
 
     

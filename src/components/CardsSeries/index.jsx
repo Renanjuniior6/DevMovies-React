@@ -13,7 +13,7 @@ function CardsSeries ({item, text, isShow}) {
     
         if (isShow) {
             navigate(`/detalheseries/${id}`)
-            window.location.reload()
+            location.reload()
         }
     }
 
