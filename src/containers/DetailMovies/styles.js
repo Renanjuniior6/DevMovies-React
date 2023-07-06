@@ -91,7 +91,7 @@ h2 {
     color: white;
 
     @media screen and (max-width: 600px) {
-        width: 400px;
+        width: 96%;
 }
 }
 
