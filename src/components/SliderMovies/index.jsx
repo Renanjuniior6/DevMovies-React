@@ -1,27 +1,36 @@
 import CardsMovies from "../CardsMovies"
 import { Container } from "./styles"
 
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
+
 
 function SliderMovies ({info, title, isTrue}) {
 
+    const [matches, setMatches] = useState(
+        window.matchMedia("(max-width: 600px)").matches
+      )
     
+      useEffect(() => {
+        window
+        .matchMedia("(max-width: 600px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+      }, []);
+
     return (
-        
     <>
 
     <Container> 
         <h2>{title}</h2>
 
         <Swiper 
-       // grabCursor={true} 
-        spaceBetween={10} 
-        slidesPerView={'2'} 
+        grabCursor={true} 
+        spaceBetween={5} 
+        slidesPerView={matches && (2) || !matches && (5)}
         className="swiper" 
         freeMode={true}
         pagination={{
