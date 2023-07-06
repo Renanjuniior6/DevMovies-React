@@ -6,7 +6,8 @@ overflow: hidden;
 
 @media screen and (max-width: 600px) {
    img {
-    width: 210px;
+   // width: 210px;
+   width: 165px;
    } 
 }
 
