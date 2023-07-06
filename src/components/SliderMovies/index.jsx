@@ -4,6 +4,9 @@ import { Container } from "./styles"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, Pagination } from 'swiper/modules';
 
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
 
 function SliderMovies ({info, title, isTrue}) {
 
@@ -15,16 +18,21 @@ function SliderMovies ({info, title, isTrue}) {
     <Container> 
         <h2>{title}</h2>
 
-        <Swiper freeMode={true} spaceBetween={20} slidesPerView={'auto'} className="swiper" pagination={{
+        <Swiper 
+       // grabCursor={true} 
+        spaceBetween={10} 
+        slidesPerView={'2'} 
+        className="swiper" 
+        freeMode={true}
+        pagination={{
           clickable: true,
         }}
-        modules={[FreeMode, Pagination]}>
-            
+        modules={[FreeMode, Pagination]} >
 
             {info.map((item, index) => (
                 <SwiperSlide key={index}>
 
-                    <CardsMovies isShow={isTrue} item={item} text={true} />
+                    <CardsMovies item={item} text={true} isShow={isTrue} />
 
                 </SwiperSlide>
             ))}
