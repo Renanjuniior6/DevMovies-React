@@ -5,6 +5,7 @@ Este projeto é carregado através de uma api que traz dados de filmes e séries
 
 No DevMovies o usuário tem acesso a:
 <br>
+<br>
 ▶Filmes populares
 <br>
 ▶Séries populares
@@ -17,9 +18,12 @@ No DevMovies o usuário tem acesso a:
 <br>
 ▶Artistas populares do momento
 <br>
-
+<br>
 ⭕Ao selecionar o filme ou séries o usuário é direcionado para uma tela onde vão estar disponíveis as informações do filme como créditos, trailers e filmes similiares
 
 ⭕Por fim o usuário pode optar por pesquisar pelo filme desejado através da barra de pesquisa no tela inicial (barra de pesquisa ainda limitada, aguardando para melhoras)
 
 💻<b>Tecnologias utilizadas</b>: React, JavaScript, React-router-dom, Swiper, Axios, Styled-Components, API, Yarn, Vite, eslint, prettier
+<br>
+<br>
+<b>Link do site:</b> https://dev-m-ovie.netlify.app
