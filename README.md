@@ -1,7 +1,7 @@
 # 🎬 DevMovies 
 ![DevMoveis-site](https://github.com/Renanjuniior6/DevMovies-React/assets/106713211/db25271c-a3c1-4e90-8aab-ea34b79dae9e)
 
-### ⭕ É um projeto que tem como proposta ser um site que permita que o usuário veja os filmes e séries mais populares do momento e atualizados em tempo real. Este projeto é integrado por uma `API` que traz dados de filmes e séries mais assistidos e bem avaliados.
+- ### É um projeto que tem como proposta ser um site que permita que o usuário veja os filmes e séries mais populares do momento e atualizados em tempo real. Este projeto é integrado por uma `API` que traz dados de filmes e séries mais assistidos e bem avaliados.
 
 ## 📚 Índice
 - [Info](#-info)
